@@ -1,0 +1,49 @@
+Manage.py (don't fuck with this)
+
+heroku
+jeff@does.work 
+Ehtashamshykh123!
+
+UN: Jeffyx
+PW: Work
+
+Django App:
+    crm
+        _init_.py
+        settings.py     (This is the main config to the app: Such as Apps and Databases)
+        urls.py         (Directs routs paths to templplates, by returning functions)
+        wsgi.py
+
+
+
+
+
+App: (i.e Accounts) ~ This app needs to be configred in "Installed Apps" in Djago App
+    >templplates  (HTML templplates folder that django will look for)
+     >accounts
+    >Migrations    (folder)
+    _init_.py
+    admin.py        (Main thing to focus on)
+    apps.py
+    models.py       (where we buld Database and Class objects)
+    tests.py
+    views.py        (Classes that URL patters render templplates, you can querey database stuff here so you can call it in your html files using {%  %} )  
+
+Commands:
+
+django-admin startproject crm (builds project)
+
+python manage.py runserver (starts server)
+
+python manage.py startapp accounts (makes an new project called accoutns)
+
+python manage.py makemigrations     (preps database for migration, before you run the migrate command. Do this every time!)
+python manage.py migrate   (conifgures Database)
+
+python manage.py shell                      (opens django shell kinda like a python or flask shell)
+from accounts.models import *                   (imports all the models (database))
+customers = Customer.objects.all()              (makes a variable thats a dictonary of the Customer database table)
+
+
+PG Admin 4:
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://flask_user:123abc@localhost/hotleads'
